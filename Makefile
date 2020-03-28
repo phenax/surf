@@ -11,7 +11,10 @@ OBJ = $(SRC:.c=.o)
 COBJ = $(CSRC:.c=.o)
 WEBEXTOBJ = $(WEBEXTSRC:.c=.o)
 
-all: options libsurf-webext.so surf
+all: removeconfig options libsurf-webext.so surf
+
+removeconfig:
+	rm config.h || true
 
 options:
 	@echo surf build options:
